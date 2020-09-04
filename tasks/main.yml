@@ -1,0 +1,46 @@
+---
+- name: Install rsyslog.
+  apt:
+    name: rsyslog
+    state: present
+    update_cache: yes
+
+- name: Install rsyslog-gnutls.
+  apt:
+    name: rsyslog-gnutls
+    state: present
+
+- name: Make sure that certs directory exists.
+  file:
+    path: '{{ rsyslog_certs_dir }}'
+    state: directory
+    owner: syslog
+    group: syslog
+
+- name: Make sure that certificates actually exists.
+  stat:
+    path: '{{ item }}'
+  with_items:
+    - '{{ rsyslog_certs_dir }}/{{ rsyslog_ca_filename }}'
+    - '{{ rsyslog_certs_dir }}/{{ rsyslog_cert_filename }}'
+    - '{{ rsyslog_certs_dir }}/{{ rsyslog_cert_key_filename }}'
+  register: file
+  failed_when: not file.stat.exists
+
+- name: Check cert files permissions.
+  file:
+    path: '{{ item }}'
+    mode: '0644'
+  with_items:
+    - '{{ rsyslog_certs_dir }}/{{ rsyslog_ca_filename }}'
+    - '{{ rsyslog_certs_dir }}/{{ rsyslog_cert_filename }}'
+    - '{{ rsyslog_certs_dir }}/{{ rsyslog_cert_key_filename }}'
+
+- name: Add custom configuration file for Rsyslog.
+  template:
+    src: '{{ rsyslog_custom_conf_file }}.j2'
+    dest: '{{ rsyslog_conf_dir }}/{{ rsyslog_custom_conf_file }}'
+  notify:
+    - update rsyslog server clients
+    - restart rsyslog server
+    - restart rsyslog

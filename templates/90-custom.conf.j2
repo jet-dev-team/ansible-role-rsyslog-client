@@ -1,0 +1,17 @@
+# sd
+global(
+  DefaultNetstreamDriverCAFile="{{ rsyslog_certs_dir }}/{{ rsyslog_ca_filename }}"
+  DefaultNetstreamDriverCertFile="{{ rsyslog_certs_dir }}/{{ rsyslog_cert_filename }}"
+  DefaultNetstreamDriverKeyFile="{{ rsyslog_certs_dir }}/{{ rsyslog_cert_key_filename }}"
+)
+
+action(
+  type="omfwd"
+  protocol="tcp"
+  target="{{ rsyslog_server_hostname }}"
+  port="{{ rsyslog_server_port }}"
+  StreamDriver="gtls"
+  StreamDriverMode="1"
+  StreamDriverAuthMode="x509/name"
+  StreamDriverPermittedPeers="{{ rsyslog_server_hostname }}"
+)

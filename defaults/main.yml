@@ -1,0 +1,26 @@
+---
+# Path to Rsyslog configuration directory.
+rsyslog_conf_dir: /etc/rsyslog.d
+# The filename of a custom configuration file.
+# Warning: there is must be a template file
+# with the same name plus ".j2" extension in /templates directory.
+rsyslog_custom_conf_file: '90-custom.conf'
+
+# A hostname of rsyslog server (without protocol prefix).
+# Example: my-logger.com
+rsyslog_server_hostname: ''
+# A port number of rsyslog service.
+rsyslog_server_port: ''
+# A hostname of rsyslog client (without protocol prefix).
+# Example: app.service.com
+rsyslog_client_hostname: ''
+
+# The role requires SSL certificates for rsyslog data transferring.
+# But not handles certificates creation or copying them to a server.
+# You should do it by yourself.
+rsyslog_certs_dir: /var/data/rsyslog_certs
+rsyslog_ca_filename: ca.crt
+rsyslog_cert_filename: cert.crt
+rsyslog_cert_key_filename: cert.pem
+
+rsyslog_server_auto_update: False

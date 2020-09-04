@@ -1,0 +1,16 @@
+---
+- hosts: host
+  name: Standalone playbook.
+
+  pre_tasks:
+    - name: Standalone playbook start.
+      debug:
+        msg: 'Rsyslog client role starting in standalone mode.'
+
+  roles:
+    - role: '{{ playbook_dir }}/..'
+
+  tasks:
+    - name: Standalone playbook end.
+      debug:
+        msg: 'Rsyslog client role end. Bye.'
