@@ -68,7 +68,7 @@ The role can be run in a standalone mode.
 
 #### Advanced
 
-1. Create an [inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html) file within `standalone` directory or user already created `standalone.inventory` file:
+1. Create an [inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html) file within `standalone` directory or use already created `standalone.inventory` file:
 
 ```bash
 standalone/standalone.inventory
