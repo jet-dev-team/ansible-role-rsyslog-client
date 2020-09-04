@@ -1,8 +1,21 @@
 ---
-- hosts: host
+- hosts: all
   name: Standalone playbook.
+  vars:
+    rsyslog_server_hostname: ''
+    rsyslog_client_hostname: '{{ inventory_hostname }}'
 
   pre_tasks:
+    - name: Check if server hostname is empty.
+      fail:
+        msg: 'Rsyslog server hostname can not be empty.'
+      when: rsyslog_server_hostname == ''
+
+    - name: Check if client hostname is empty.
+      fail:
+        msg: 'Rsyslog client hostname can not be empty.'
+      when: rsyslog_server_hostname == ''
+
     - name: Standalone playbook start.
       debug:
         msg: 'Rsyslog client role starting in standalone mode.'

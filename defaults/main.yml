@@ -23,4 +23,4 @@ rsyslog_ca_filename: ca.crt
 rsyslog_cert_filename: cert.crt
 rsyslog_cert_key_filename: cert.pem
 
-rsyslog_server_auto_update: False
+rsyslog_server_clients_update: False
