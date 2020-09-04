@@ -6,7 +6,7 @@
     line: '"{{ rsyslog_client_hostname }}",'
   delegate_to: '{{ rsyslog_server_hostname }}'
   remote_user: root
-  when: rsyslog_server_auto_update
+  when: rsyslog_server_clients_update
 
 - name: restart rsyslog server
   service:
@@ -14,7 +14,7 @@
     state: restarted
   delegate_to: '{{ rsyslog_server_hostname }}'
   remote_user: root
-  when: rsyslog_server_auto_update
+  when: rsyslog_server_clients_update
 
 - name: restart rsyslog
   service:
