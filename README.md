@@ -2,6 +2,8 @@
 
 An [Ansible](https://www.ansible.com/) role that installs [Rsyslog](https://www.rsyslog.com/) and configures a server as rsyslog client.
 
+&nbsp;
+
 ## Requirements
 
 1. ### SSL/TLS certificates
@@ -9,6 +11,8 @@ An [Ansible](https://www.ansible.com/) role that installs [Rsyslog](https://www.
    The role assumes that you already copied certificates to a client server.
 
    Certificates must be placed under `/var/data/rsyslog_certs` directory on the client. The role automatically ckecks and fix files permissions.
+
+&nbsp;
 
 ## Role variables
 
@@ -38,9 +42,13 @@ rsyslog_server_clients_update: True
 
 Automaticaly updates clients list on the Rsyslog server.
 
+&nbsp;
+
 ## Dependencies
 
 None.
+
+&nbsp;
 
 ## Example playbook
 
@@ -49,6 +57,8 @@ None.
   roles:
     - { role: jet-dev.rsyslog-client }
 ```
+
+&nbsp;
 
 ## Standalone run
 
@@ -90,9 +100,13 @@ ansible-playbook -v -i standalone.inventory -e rsyslog_server_hostname=log-serve
 
 Note: `rsyslog_client_hostname` variable will be automatically populated from special Ansible variable `inventory_hostname`.
 
+&nbsp;
+
 ## License
 
 MIT / BSD
+
+&nbsp;
 
 ## Authors information
 
