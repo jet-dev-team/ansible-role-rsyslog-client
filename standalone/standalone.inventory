@@ -1,2 +1,0 @@
-[host]
-oauth-server-1.alpha.idmcore.com ansible_connection=ssh ansible_user=root ansible_python_interpreter=/usr/bin/python3
