@@ -1,3 +1,11 @@
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ansible_logo.svg/1200px-Ansible_logo.svg.png" height="48" alt="Ansible logo">
+&nbsp;&nbsp;&nbsp;
+<img src="https://www.rsyslog.com/files/2019/01/logo_neu_cropped.png" height="48" alt="Rsyslog logo">
+&nbsp;&nbsp;&nbsp;
+<img src="https://jet.dev/img/jet_dev_logo_horizontal_optimized.svg" height="48" alt="Jet.Dev logo">
+
+&nbsp;
+
 # Ansible role: Rsyslog Client
 
 An [Ansible](https://www.ansible.com/) role that installs [Rsyslog](https://www.rsyslog.com/) and configures a server as rsyslog client.
