@@ -33,13 +33,13 @@ rsyslog_server_port: ''
 **Required!** A Rsyslog service server port number.
 
 ```
-syslog_client_hostname: ''
+rsyslog_client_hostname: ''
 ```
 
 **Required!** A hostname of rsyslog client (without protocol prefix). Example: some-app.example.com
 
 ```
-rsyslog_server_clients_update: True
+rsyslog_server_clients_update: False
 ```
 
 Automaticaly updates clients list on the Rsyslog server.
