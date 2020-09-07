@@ -1,0 +1,11 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: jet-dev.rsyslog-client
+  description: Installs and configures Rsyslog as a client.
+  license: 'license (BSD, MIT)'
+  galaxy_tags:
+    - rsyslog
+    - logging
+    - monitoring
